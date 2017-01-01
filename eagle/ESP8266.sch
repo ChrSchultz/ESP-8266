@@ -610,57 +610,6 @@ Source: http://cache.national.com/ds/LM/LM2574.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="docu-dummy">
-<description>Dummy symbols</description>
-<packages>
-</packages>
-<symbols>
-<symbol name="ELKO">
-<wire x1="-1.524" y1="-0.889" x2="1.524" y2="-0.889" width="0.254" layer="94"/>
-<wire x1="1.524" y1="-0.889" x2="1.524" y2="0" width="0.254" layer="94"/>
-<wire x1="-1.524" y1="0" x2="-1.524" y2="-0.889" width="0.254" layer="94"/>
-<wire x1="-1.524" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="1.524" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="0" y2="2.54" width="0.1524" layer="94"/>
-<wire x1="0" y1="-2.54" x2="0" y2="-5.08" width="0.1524" layer="94"/>
-<text x="-0.5842" y="0.4064" size="1.27" layer="94" rot="R90">+</text>
-<rectangle x1="-1.651" y1="-2.54" x2="1.651" y2="-1.651" layer="94"/>
-</symbol>
-<symbol name="INDUCTOR">
-<wire x1="0" y1="-5.08" x2="0" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="0" y1="5.08" x2="0" y2="2.54" width="0.1524" layer="94"/>
-<rectangle x1="-1.016" y1="-3.556" x2="1.016" y2="3.556" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="ELKO" prefix="C">
-<description>&lt;b&gt;ELektrolyt Capacitor&lt;/b&gt;</description>
-<gates>
-<gate name="G$1" symbol="ELKO" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="L" prefix="L">
-<description>&lt;b&gt;INDUCTOR&lt;/b&gt;</description>
-<gates>
-<gate name="G$1" symbol="INDUCTOR" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="diode">
 <description>&lt;b&gt;Diodes&lt;/b&gt;&lt;p&gt;
 Based on the following sources:
@@ -1707,6 +1656,104 @@ Source: http://download.siliconexpert.com/pdfs/2005/02/24/Semi_Ap/2/VSH/Resistor
 </deviceset>
 </devicesets>
 </library>
+<library name="e-kondensatoren">
+<description>&lt;b&gt;Kondensatoren für Elektropläne&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Autor librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="GEPOLTER_ELEKTROLYTKONDENSATOR">
+<description>Dummy</description>
+<pad name="+" x="5.08" y="0" drill="0.2" diameter="0.6" shape="square"/>
+<pad name="-" x="-5.08" y="0" drill="0.2" diameter="0.6" shape="square"/>
+<text x="0" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<text x="0" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="GEPOLTER_ELEKTROLYTKONDENSATOR">
+<wire x1="0" y1="2.54" x2="0" y2="2.285" width="0.1524" layer="94"/>
+<wire x1="0" y1="-2.54" x2="0" y2="-1.0198" width="0.1524" layer="94"/>
+<wire x1="3.8214" y1="1.007" x2="-3.8082" y2="1.007" width="0.254" layer="94"/>
+<wire x1="3.8214" y1="-1.0198" x2="-3.8082" y2="-1.0198" width="0.254" layer="94"/>
+<wire x1="3.8214" y1="4.0666" x2="1.7816" y2="4.0666" width="0.254" layer="94"/>
+<wire x1="2.8016" y1="5.0736" x2="2.8016" y2="3.0468" width="0.254" layer="94"/>
+<wire x1="3.8214" y1="2.285" x2="-3.8082" y2="2.285" width="0.254" layer="94"/>
+<wire x1="3.8214" y1="1.007" x2="3.8214" y2="2.285" width="0.254" layer="94"/>
+<wire x1="-3.8082" y1="1.007" x2="-3.8082" y2="2.285" width="0.254" layer="94"/>
+<text x="-5.08" y="1.27" size="1.778" layer="95" rot="R180">&gt;PART</text>
+<text x="-5.08" y="-2.54" size="1.778" layer="96" rot="R180">&gt;VALUE</text>
+<pin name="-" x="0" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="+" x="0" y="5.08" visible="off" length="short" direction="pas" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="GEPOLTER_ELEKTROLYTKONDENSATOR" prefix="C" uservalue="yes">
+<description>Gepolter Elektrolytkondensator</description>
+<gates>
+<gate name="G$1" symbol="GEPOLTER_ELEKTROLYTKONDENSATOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="GEPOLTER_ELEKTROLYTKONDENSATOR">
+<connects>
+<connect gate="G$1" pin="+" pad="+"/>
+<connect gate="G$1" pin="-" pad="-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="e-spulen-transformatoren">
+<description>&lt;b&gt;Spulen und Transformatoren für Elektropläne&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Autor librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SPULE">
+<description>Dummy</description>
+<pad name="1" x="0" y="2.54" drill="0.2" diameter="0.6" shape="square"/>
+<pad name="2" x="0" y="-2.54" drill="0.2" diameter="0.6" shape="square"/>
+</package>
+</packages>
+<symbols>
+<symbol name="SPULE">
+<wire x1="0" y1="5.08" x2="0" y2="2.54" width="0.1524" layer="94" curve="-180"/>
+<wire x1="0" y1="2.54" x2="0" y2="0" width="0.1524" layer="94" curve="-180"/>
+<wire x1="0" y1="0" x2="0" y2="-2.54" width="0.1524" layer="94" curve="-180"/>
+<wire x1="0" y1="-2.54" x2="0" y2="-5.08" width="0.1524" layer="94" curve="-180"/>
+<text x="-2.54" y="3.81" size="1.778" layer="95" rot="R180">&gt;PART</text>
+<text x="-2.54" y="1.27" size="1.778" layer="96" rot="R180">&gt;VALUE</text>
+<text x="-2.54" y="-6.35" size="1.778" layer="96" rot="R180">&gt;FUNKTION</text>
+<text x="-2.54" y="-1.27" size="1.778" layer="96" rot="R180">&gt;TYPE</text>
+<text x="-2.54" y="-3.81" size="1.778" layer="96" rot="R180">&gt;HERSTELLER</text>
+<pin name="1" x="0" y="7.62" visible="pad" length="short" direction="pas" rot="R270"/>
+<pin name="2" x="0" y="-7.62" visible="pad" length="short" direction="pas" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="SPULE_ALTERNATIV" prefix="R" uservalue="yes">
+<description>Spule alternativ</description>
+<gates>
+<gate name="1" symbol="SPULE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SPULE">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="FUNKTION" value="" constant="no"/>
+<attribute name="HERSTELLER" value="" constant="no"/>
+<attribute name="TYPE" value="" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1724,22 +1771,16 @@ Source: http://download.siliconexpert.com/pdfs/2005/02/24/Semi_Ap/2/VSH/Resistor
 <part name="JP1" library="jumper" deviceset="JP2W" device=""/>
 <part name="IC1" library="linear" deviceset="LM2574?-*" device="HVM" technology="3.3"/>
 <part name="JP2" library="jumper" deviceset="JP2E" device=""/>
-<part name="C1" library="docu-dummy" deviceset="ELKO" device="">
-<attribute name="CAPACITY" value="100uF"/>
-</part>
-<part name="C2" library="docu-dummy" deviceset="ELKO" device="">
-<attribute name="CAPACITY" value="220uF"/>
-</part>
 <part name="D1" library="diode" deviceset="SCHOTTKY-DIODE" device="TO92H">
 <attribute name="D" value="1 1DQ0 6"/>
-</part>
-<part name="L1" library="docu-dummy" deviceset="L" device="">
-<attribute name="L1" value="333uH"/>
 </part>
 <part name="R3" library="eagle-ltspice" deviceset="R" device="R0201" value="650k">
 <attribute name="RESISTANCE" value="650k"/>
 </part>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
+<part name="C2" library="e-kondensatoren" deviceset="GEPOLTER_ELEKTROLYTKONDENSATOR" device=""/>
+<part name="C1" library="e-kondensatoren" deviceset="GEPOLTER_ELEKTROLYTKONDENSATOR" device=""/>
+<part name="L1" library="e-spulen-transformatoren" deviceset="SPULE_ALTERNATIV" device="" value="L1"/>
 </parts>
 <sheets>
 <sheet>
@@ -1753,54 +1794,40 @@ Source: http://download.siliconexpert.com/pdfs/2005/02/24/Semi_Ap/2/VSH/Resistor
 <instance part="JP1" gate="1" x="33.02" y="17.78" rot="R180"/>
 <instance part="IC1" gate="G$1" x="10.16" y="78.74"/>
 <instance part="JP2" gate="1" x="17.78" y="48.26" rot="R270"/>
-<instance part="C1" gate="G$1" x="35.56" y="30.48" rot="R180">
-<attribute name="CAPACITY" x="35.56" y="30.48" size="1.778" layer="96" rot="R180"/>
-</instance>
-<instance part="C2" gate="G$1" x="27.94" y="60.96">
-<attribute name="CAPACITY" x="27.94" y="60.96" size="1.778" layer="96" display="off"/>
-</instance>
 <instance part="D1" gate="G$1" x="22.86" y="53.34" rot="R90">
 <attribute name="D" x="22.86" y="53.34" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="L1" gate="G$1" x="27.94" y="71.12">
-<attribute name="L1" x="30.48" y="73.66" size="1.778" layer="96"/>
 </instance>
 <instance part="R3" gate="G$1" x="71.12" y="53.34">
 <attribute name="RESISTANCE" x="71.12" y="55.88" size="1.778" layer="96"/>
 </instance>
 <instance part="GND1" gate="1" x="73.66" y="33.02"/>
+<instance part="C2" gate="G$1" x="27.94" y="55.88"/>
+<instance part="C1" gate="G$1" x="50.8" y="33.02" rot="R90"/>
+<instance part="L1" gate="1" x="27.94" y="71.12"/>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="N$3" class="0">
+<net name="OUT" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="OUT"/>
 <pinref part="D1" gate="G$1" pin="C"/>
 <wire x1="20.32" y1="83.82" x2="22.86" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="83.82" x2="22.86" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="83.82" x2="27.94" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="83.82" x2="22.86" y2="78.74" width="0.1524" layer="91"/>
 <junction x="20.32" y="83.82"/>
-<junction x="22.86" y="83.82"/>
-<wire x1="27.94" y1="83.82" x2="27.94" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="27.94" y1="76.2" x2="27.94" y2="78.74" width="0.1524" layer="91"/>
-<junction x="27.94" y="76.2"/>
+<pinref part="L1" gate="1" pin="1"/>
+<wire x1="22.86" y1="78.74" x2="22.86" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="78.74" x2="22.86" y2="78.74" width="0.1524" layer="91"/>
+<junction x="22.86" y="78.74"/>
 </segment>
 </net>
 <net name="5V" class="0">
 <segment>
-<pinref part="JP1" gate="1" pin="1"/>
-<wire x1="35.56" y1="27.94" x2="35.56" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="22.86" x2="35.56" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="22.86" x2="40.64" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="22.86" x2="40.64" y2="45.72" width="0.1524" layer="91"/>
-<junction x="35.56" y="22.86"/>
-<junction x="35.56" y="20.32"/>
-<wire x1="40.64" y1="45.72" x2="96.52" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="45.72" x2="35.56" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="45.72" x2="96.52" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="45.72" x2="96.52" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="U1" gate="A" pin="VCC"/>
 <junction x="96.52" y="63.5"/>
-<wire x1="40.64" y1="45.72" x2="25.4" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="45.72" x2="25.4" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="JP2" gate="1" pin="3"/>
 <wire x1="15.24" y1="33.02" x2="15.24" y2="40.64" width="0.1524" layer="91"/>
@@ -1813,7 +1840,13 @@ Source: http://download.siliconexpert.com/pdfs/2005/02/24/Semi_Ap/2/VSH/Resistor
 <junction x="0" y="86.36"/>
 <wire x1="25.4" y1="40.64" x2="15.24" y2="40.64" width="0.1524" layer="91"/>
 <junction x="15.24" y="40.64"/>
-<junction x="40.64" y="45.72"/>
+<pinref part="JP1" gate="1" pin="1"/>
+<wire x1="35.56" y1="20.32" x2="35.56" y2="33.02" width="0.1524" layer="91"/>
+<junction x="35.56" y="45.72"/>
+<pinref part="C1" gate="G$1" pin="+"/>
+<wire x1="35.56" y1="33.02" x2="35.56" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="33.02" x2="35.56" y2="33.02" width="0.1524" layer="91"/>
+<junction x="35.56" y="33.02"/>
 </segment>
 </net>
 <net name="DIN" class="0">
@@ -1843,14 +1876,14 @@ Source: http://download.siliconexpert.com/pdfs/2005/02/24/Semi_Ap/2/VSH/Resistor
 </net>
 <net name="SIGOUT(5V)" class="0">
 <segment>
-<pinref part="JP1" gate="1" pin="3"/>
 <wire x1="40.64" y1="53.34" x2="40.64" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="48.26" x2="30.48" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="48.26" x2="30.48" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="66.04" y1="53.34" x2="40.64" y2="53.34" width="0.1524" layer="91"/>
-<junction x="30.48" y="20.32"/>
 <junction x="66.04" y="53.34"/>
+<pinref part="JP1" gate="1" pin="3"/>
+<wire x1="30.48" y1="48.26" x2="30.48" y2="20.32" width="0.1524" layer="91"/>
+<junction x="30.48" y="20.32"/>
+<wire x1="30.48" y1="48.26" x2="40.64" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -1859,8 +1892,7 @@ Source: http://download.siliconexpert.com/pdfs/2005/02/24/Semi_Ap/2/VSH/Resistor
 <wire x1="127" y1="43.18" x2="101.6" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="43.18" x2="73.66" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="43.18" x2="58.42" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="58.42" y1="43.18" x2="35.56" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="43.18" x2="33.02" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="43.18" x2="33.02" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="33.02" y1="43.18" x2="27.94" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="43.18" x2="22.86" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="43.18" x2="12.7" y2="43.18" width="0.1524" layer="91"/>
@@ -1879,7 +1911,6 @@ Source: http://download.siliconexpert.com/pdfs/2005/02/24/Semi_Ap/2/VSH/Resistor
 <wire x1="12.7" y1="48.26" x2="12.7" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="JP1" gate="1" pin="2"/>
 <wire x1="33.02" y1="43.18" x2="33.02" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="35.56" x2="35.56" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="WEMOS1" gate="D1" pin="GND"/>
 <wire x1="58.42" y1="63.5" x2="58.42" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="U1" gate="A" pin="1~OE"/>
@@ -1890,7 +1921,6 @@ Source: http://download.siliconexpert.com/pdfs/2005/02/24/Semi_Ap/2/VSH/Resistor
 <junction x="7.62" y="43.18"/>
 <junction x="10.16" y="43.18"/>
 <junction x="15.24" y="48.26"/>
-<junction x="35.56" y="43.18"/>
 <junction x="33.02" y="20.32"/>
 <junction x="58.42" y="63.5"/>
 <junction x="58.42" y="43.18"/>
@@ -1906,35 +1936,42 @@ Source: http://download.siliconexpert.com/pdfs/2005/02/24/Semi_Ap/2/VSH/Resistor
 <junction x="73.66" y="43.18"/>
 <junction x="12.7" y="43.18"/>
 <junction x="33.02" y="43.18"/>
-<wire x1="27.94" y1="43.18" x2="27.94" y2="55.88" width="0.1524" layer="91"/>
-<junction x="27.94" y="43.18"/>
-<junction x="27.94" y="55.88"/>
 <junction x="127" y="63.5"/>
+<pinref part="C2" gate="G$1" pin="-"/>
+<wire x1="27.94" y1="43.18" x2="27.94" y2="50.8" width="0.1524" layer="91"/>
+<junction x="27.94" y="43.18"/>
+<pinref part="C1" gate="G$1" pin="-"/>
+<wire x1="55.88" y1="33.02" x2="58.42" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="33.02" x2="58.42" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
+<pinref part="WEMOS1" gate="D1" pin="3V3"/>
+<wire x1="55.88" y1="96.52" x2="55.88" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="58.42" x2="43.18" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="96.52" x2="55.88" y2="96.52" width="0.1524" layer="91"/>
+<junction x="55.88" y="96.52"/>
+</segment>
+</net>
+<net name="FB" class="0">
+<segment>
 <pinref part="IC1" gate="G$1" pin="FB"/>
 <junction x="20.32" y="86.36"/>
 <wire x1="20.32" y1="86.36" x2="35.56" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="86.36" x2="35.56" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="WEMOS1" gate="D1" pin="3V3"/>
-<wire x1="55.88" y1="96.52" x2="55.88" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="86.36" x2="35.56" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="C2" gate="G$1" pin="+"/>
+<wire x1="27.94" y1="63.5" x2="27.94" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="63.5" x2="27.94" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="L1" gate="1" pin="2"/>
+<junction x="27.94" y="63.5"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
 <pinref part="JP2" gate="1" pin="1"/>
 <wire x1="15.24" y1="50.8" x2="15.24" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="58.42" x2="43.18" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="58.42" x2="43.18" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="96.52" x2="55.88" y2="96.52" width="0.1524" layer="91"/>
 <junction x="15.24" y="50.8"/>
-<junction x="55.88" y="96.52"/>
-<junction x="15.24" y="58.42"/>
-<wire x1="35.56" y1="66.04" x2="27.94" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="27.94" y1="66.04" x2="15.24" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="66.04" x2="15.24" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="27.94" y1="66.04" x2="27.94" y2="63.5" width="0.1524" layer="91"/>
-<junction x="27.94" y="66.04"/>
-<junction x="15.24" y="66.04"/>
-<junction x="27.94" y="63.5"/>
 </segment>
 </net>
 </nets>
